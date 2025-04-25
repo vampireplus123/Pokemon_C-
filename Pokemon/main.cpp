@@ -21,20 +21,21 @@ int main() {
 	
     cout << "Which Pokémon would you like to choose? Enter the number: ";
     cin >> player_choice;
-    if(player_choice == 1)
+    switch (player_choice)
     {
-        cout<<"You chose Bulbasaur! A wise choice.";
-    }else if(player_choice == 2)
-    {
-        cout<<"You chose Charmander! A fiery choice.";
-    }else if (player_choice == 3)
-    {
-        cout<<"You chose Squirtle! A cool choice.";
-
-    }
-    else
-    {
-        cout<<"Invalid choice. Please restart the game.";
+    case 1:
+        /* code */
+        cout<<"Professor Oak: A fiery choice! Charmander is yours!";
+        break;
+    case 2:
+        cout<<"Professor Oak: A fine choice! Bulbasaur is always ready to grow on you!";
+        break;
+    case 3:
+        cout<<"Professor Oak: Splendid! Squirtle will keep you cool under pressure!";
+        break;
+    default:
+        cout<<"Professor Oak: Hmm, that doesn't seem right. Let me choose for you… Just kidding! Let's go with Pikachu, the surprise guest!";
+        break;
     }
     return 0;
 }
