@@ -20,6 +20,15 @@ enum class PokemonType   {
     Normal
 };
 
+enum class HealingItems   {
+    Potion,
+    Elixir
+};
+
+enum class BattleItems   {
+    Potion,
+    Elixir
+};
 
 
 int main() {
@@ -27,9 +36,11 @@ int main() {
     int player_choice;
     int castle;
     PokemonChoice pokemon_choice  =  PokemonChoice::InvalidChoice;
+    HealingItems HealingItems = HealingItems::Potion;
+    BattleItems BattleItems = BattleItems::Potion;
+    
 
     cout<<" Trainer! Before you embark on your journey,\nthe Pokemon world needs to know who you are!";
-   
     cout<<"Time to step up and tell us your name.\nAnd remember, a great name is the start of every great adventure!"<<endl;
     
    
@@ -44,6 +55,7 @@ int main() {
     cout << "Which Pokemon would you like to choose? Enter the number: ";
 
     cin >> player_choice;
+
     switch (player_choice)
     {
         case 1:
@@ -81,14 +93,16 @@ int main() {
 
     cout<<"--------\n";
     cout<<"--------\n";
-    cout << "Welcome, brave adventurer!\n";
-    cout << "You find yourself standing in front of a massive, ancient castle.\n";
-    cout << "The walls are cracked with age,\n";
-    cout << "and the doors creak as they slowly open in front of you.\n";
-    cout << "Inside, there are many rooms, each more mysterious than the last.\n";
-    cout << "Some may hold treasures beyond imagination,\n";
-    cout << "while others may hide dangers lurking in the shadows.\n";
+    cout << "Welcome, brave adventurer!\n"
+        << "You find yourself standing in front of a massive, ancient castle.\n"
+        << "The walls are cracked with age,\n"
+        << "and the doors creak as they slowly open in front of you.\n"
+        << "Inside, there are many rooms, each more mysterious than the last.\n"
+        << "Some may hold treasures beyond imagination,\n"
+        << "while others may hide dangers lurking in the shadows.\n";
 
+
+    cout<<"--------\n";
     cout<<"Enter the castle, choose your room by entering a number (1, 2, or 3): ";
     cin>>castle;
 
@@ -106,6 +120,38 @@ int main() {
     default:
         cout<<"A secret passage to the dungeon! Beware, danger lies ahead in the dark corridors.";
         break;
+    }
+    
+    cout<<"--------\n";
+    cout<<"--------\n";
+    cout << "Young Trainer!\n"
+     << "You have been doing a fantastic job so far.\n"
+     << "But a new challenge awaits, one that even I am struggling with in the lab!\n"
+     << "Today, we are dealing with a type confusion like no other!\n";
+     
+    cout<<"--------\n";
+    switch (HealingItems)
+    {
+        case HealingItems::Potion:
+            cout << "Healing Potion used! Your Pokémon recovers HP!\n";
+            break;
+        case HealingItems::Elixir:
+            cout << "Healing Elixir used! Your Pokémon recovers PP!\n";
+            break;
+        default:
+            break;
+    }
+    
+    switch (BattleItems)
+    {
+        case BattleItems::Potion:
+            cout << "Battle Potion used! Your Pokémon's attack power rises!\n";
+            break;
+        case BattleItems::Elixir:
+            cout << "Battle Elixir used! Your Pokémon can use moves without consuming PP for a while!\n";
+            break;
+        default:
+            break;
     }
     return 0;
 }
