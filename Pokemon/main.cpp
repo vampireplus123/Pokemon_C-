@@ -1,17 +1,32 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-enum PokemonChoice {
+
+
+
+enum class PokemonChoice {
     Charmander,
     Bulbasaur,
     Splendid,
     InvalidChoice
 };
+
+
+enum class PokemonType   {
+    Fire, 
+    Electric, 
+    Water, 
+    Earth, 
+    Normal
+};
+
+
+
 int main() {
     string player_name;
     int player_choice;
     int castle;
-    PokemonChoice pokemon_choice  =  InvalidChoice;
+    PokemonChoice pokemon_choice  =  PokemonChoice::InvalidChoice;
 
     cout<<" Trainer! Before you embark on your journey,\nthe Pokemon world needs to know who you are!";
    
@@ -33,13 +48,13 @@ int main() {
     {
         case 1:
             /* code */
-            pokemon_choice =  Charmander;
+            pokemon_choice =  PokemonChoice::Charmander;
             break;
         case 2:
-            pokemon_choice =  Bulbasaur;
+            pokemon_choice =  PokemonChoice::Bulbasaur;
             break;
         case 3:
-            pokemon_choice =  Splendid;
+            pokemon_choice =  PokemonChoice::Splendid;
             break;
         default:
             cout<<"Professor Oak: Hmm, that doesn't seem right. Let me choose for you… Just kidding! Let's go with Pikachu, the surprise guest!";
@@ -48,18 +63,18 @@ int main() {
 
     switch (pokemon_choice)
     {
-        case Charmander:
+        case PokemonChoice::Charmander:
             cout << "Professor Oak: A fiery choice! Charmander is yours!\n";
             break;
-        case Bulbasaur:
+        case PokemonChoice::Bulbasaur:
             cout << "Professor Oak: A fine choice! Bulbasaur is always ready to grow on you!\n";
             break;
-        case Splendid:
+        case PokemonChoice::Splendid:
             cout << "Professor Oak: Splendid! Squirtle will keep you cool under pressure!\n";
             break;
         default:
             cout << "Professor Oak: Hmm, that doesn't seem right. Let me choose for you...\n";
-            pokemon_choice =  Charmander;
+            pokemon_choice =  PokemonChoice::Charmander;
             cout << "Professor Oak: Just kidding! Let's go with Charmander, the fiery dragon in the making!\n";
             break;
     }
