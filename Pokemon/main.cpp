@@ -3,6 +3,7 @@
 using namespace std;
 
 
+<<<<<<< Updated upstream
 
 enum class PokemonChoice {
     Charmander,
@@ -31,16 +32,31 @@ enum class BattleItems   {
 };
 
 
+=======
+enum PokemonChoice {
+    Charmander,
+    Bulbasaur,
+    Squirtle,
+    InvalidChoice
+};
+>>>>>>> Stashed changes
 int main() {
     string player_name;
     int player_choice;
     int castle;
+<<<<<<< Updated upstream
     PokemonChoice pokemon_choice  =  PokemonChoice::InvalidChoice;
     HealingItems HealingItems = HealingItems::Potion;
     BattleItems BattleItems = BattleItems::Potion;
     
 
     cout<<" Trainer! Before you embark on your journey,\nthe Pokemon world needs to know who you are!";
+=======
+    PokemonChoice choice = InvalidChoice;
+
+    cout<<" Trainer! Before you embark on your journey,\nthe Pokémon world needs to know who you are!";
+   
+>>>>>>> Stashed changes
     cout<<"Time to step up and tell us your name.\nAnd remember, a great name is the start of every great adventure!"<<endl;
     
    
