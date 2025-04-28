@@ -3,60 +3,36 @@
 using namespace std;
 
 
-<<<<<<< Updated upstream
-
-enum class PokemonChoice {
-    Charmander,
-    Bulbasaur,
-    Splendid,
-    InvalidChoice
-};
-
-
-enum class PokemonType   {
-    Fire, 
-    Electric, 
-    Water, 
-    Earth, 
-    Normal
-};
-
-enum class HealingItems   {
-    Potion,
-    Elixir
-};
-
-enum class BattleItems   {
-    Potion,
-    Elixir
-};
-
-
-=======
 enum PokemonChoice {
     Charmander,
     Bulbasaur,
     Squirtle,
     InvalidChoice
 };
->>>>>>> Stashed changes
+
+enum class HealingItems
+{
+    Potion,
+    Elixir
+};
+
+enum class BattleItems
+{
+    Potion,
+    Elixir
+};
 int main() {
     string player_name;
     int player_choice;
     int castle;
-<<<<<<< Updated upstream
-    PokemonChoice pokemon_choice  =  PokemonChoice::InvalidChoice;
+    PokemonChoice choice = InvalidChoice;
     HealingItems HealingItems = HealingItems::Potion;
     BattleItems BattleItems = BattleItems::Potion;
-    
 
-    cout<<" Trainer! Before you embark on your journey,\nthe Pokemon world needs to know who you are!";
-=======
-    PokemonChoice choice = InvalidChoice;
+
 
     cout<<" Trainer! Before you embark on your journey,\nthe Pokémon world needs to know who you are!";
    
->>>>>>> Stashed changes
     cout<<"Time to step up and tell us your name.\nAnd remember, a great name is the start of every great adventure!"<<endl;
     
    
@@ -76,20 +52,20 @@ int main() {
     {
         case 1:
             /* code */
-            pokemon_choice =  PokemonChoice::Charmander;
+            choice =  PokemonChoice::Charmander;
             break;
         case 2:
-            pokemon_choice =  PokemonChoice::Bulbasaur;
+            choice =  PokemonChoice::Bulbasaur;
             break;
         case 3:
-            pokemon_choice =  PokemonChoice::Splendid;
+            choice =  PokemonChoice::Squirtle;
             break;
         default:
             cout<<"Professor Oak: Hmm, that doesn't seem right. Let me choose for you… Just kidding! Let's go with Pikachu, the surprise guest!";
             break;
     }
 
-    switch (pokemon_choice)
+    switch (choice)
     {
         case PokemonChoice::Charmander:
             cout << "Professor Oak: A fiery choice! Charmander is yours!\n";
@@ -97,12 +73,12 @@ int main() {
         case PokemonChoice::Bulbasaur:
             cout << "Professor Oak: A fine choice! Bulbasaur is always ready to grow on you!\n";
             break;
-        case PokemonChoice::Splendid:
+        case PokemonChoice::Squirtle:
             cout << "Professor Oak: Splendid! Squirtle will keep you cool under pressure!\n";
             break;
         default:
             cout << "Professor Oak: Hmm, that doesn't seem right. Let me choose for you...\n";
-            pokemon_choice =  PokemonChoice::Charmander;
+            choice =  PokemonChoice::Charmander;
             cout << "Professor Oak: Just kidding! Let's go with Charmander, the fiery dragon in the making!\n";
             break;
     }
