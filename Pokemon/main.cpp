@@ -32,13 +32,23 @@ class Pokemon {
 
     Pokemon()
     {
-        
+        name = "Pikachu";
+        type = PokemonType::ELECTRIC;
+        health = 10;
     }
+    // Parameterized constructor
     Pokemon(string p_name, PokemonType p_type, int p_health){
-        name = p_name;
-        type = p_type;
-        health = p_health;
+        name = "Pikachu";
+        type = PokemonType::ELECTRIC;
+        health = 10;
     }
+    // Copy constructor
+    Pokemon(const Pokemon& other) {
+        name = other.name;
+        type = other.type;
+        health = other.health;
+    }
+
 
     // Method to simulate attacking (just for demonstration)
     void attack() { std::cout << name << "attacks with a powerful move!\n"; }
@@ -50,6 +60,22 @@ class Player
     public:
         string name;
         Pokemon chosenPokemon;
+
+        Player()
+        {
+            name = "Trainer";
+            chosenPokemon = Pokemon(); // Default to Pikachu
+        }
+        // Parameterized constructor
+        Player(string P_name, Pokemon P_chosenPokemon) {
+            name = P_name;
+            chosenPokemon = P_chosenPokemon;
+        }
+        // Copy constructor
+        Player(const Player& other) {
+            name = other.name;
+            chosenPokemon = other.chosenPokemon;
+        }
 
         void choosePokemon(int choice) {
             switch ((PokemonChoice)choice) { 
@@ -85,7 +111,6 @@ class ProfessorOak {
 
     // Method to ask the player to choose a Pokemon
     void offerPokemonChoices(Player& player) {
-        cout << name << ": First, tell me, what’s your name?\n"; 
         cout << name << ": Ah, " << player.name << "! What a fantastic name!\n";
         cout << name << ": You must be eager to start your adventure. But first, you’ll need a Pokemon of your own!\n"; 
 
@@ -103,29 +128,22 @@ class ProfessorOak {
 };
 
 int main() {
-
-    
-    // Creating Objects of ProfessorOak, Pokemon and Player class
-    ProfessorOak professor; 
+    ProfessorOak professor;
     Pokemon placeholderPokemon;
     Player player;
     string playerName;
     professor.name = "Professor Oak";
 
-    professor.greetPlayer(); 
-    //Assigning Values to player attributes
-    cout<<"Enter Your Name: \n";
-    cin>>playerName;
+    professor.greetPlayer();
+    
+    cout << "Enter Your Name: \n";
+    cin >> playerName;
     player.name = playerName;
 
-    //Assigning Values to ProfessorOak attributes
-    // Greet the player and offer Pokemon choices 
-    professor.offerPokemonChoices(player); 
+    professor.offerPokemonChoices(player);
 
-    // Conclude the first chapter 
-    cout << "Professor Oak: " << player.chosenPokemon.name << " and you, " << player.name << ", are going to be the best of friends!\n"; 
+    cout << "Professor Oak: " << player.chosenPokemon.name << " and you, " << player.name << ", are going to be the best of friends!\n";
     cout << "Professor Oak: Your journey begins now! Get ready to explore the vast world of Pokemon!\n";
-
 
     return 0;
 }
