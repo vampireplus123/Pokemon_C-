@@ -35,12 +35,12 @@ class Pokemon {
         name = "Pikachu";
         type = PokemonType::ELECTRIC;
         health = 10;
-    }
+    };
     // Parameterized constructor
     Pokemon(string p_name, PokemonType p_type, int p_health){
-        name = "Pikachu";
-        type = PokemonType::ELECTRIC;
-        health = 10;
+        name = p_name;
+        type = p_type;
+        health = p_health;
     }
     // Copy constructor
     Pokemon(const Pokemon& other) {
@@ -89,7 +89,7 @@ class Player
                         chosenPokemon = Pokemon("Squirtle", PokemonType::WATER, 100); 
                         break; 
                 default: 
-                        chosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100); 
+                        chosenPokemon = Pokemon(); 
                         break; 
                         } 
                         cout << "Player " << name << " chose " << chosenPokemon.name << "!\n";
